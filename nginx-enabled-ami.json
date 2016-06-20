@@ -12,6 +12,13 @@
         "instance_type": "m3.medium",
         "ssh_username": "ubuntu",
         "ami_name": "packer_example {{timestamp}}"
+    }],
+    "provisioners": [{
+        "type": "shell",
+        "inline": [
+            "sleep 30",
+            "sudo apt-get update",
+            "sudo apt-get install -y nginx"
+        ]
     }]
-    
 }
